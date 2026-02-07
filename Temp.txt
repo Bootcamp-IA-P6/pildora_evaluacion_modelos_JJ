@@ -1,0 +1,82 @@
+Hola Gemini.
+¿Cómo guardar el modelo una vez validado?
+Gracias Gemini.
+
+
+C:\Users\Coder\Proyectos\Pildora_Evaluación de modelos y métricas de rendimiento
+
+{NUM} / {COUNT}    README.20260207204652S.pdf
+c:\Users\Coder\Proyectos\Pildora_Evaluación de modelos y métricas de rendimiento\README.20260207204652S.pdf    3.274.169    2026-02-07 20.46    -a--
+
+Hola Gemini.
+¿Me puedes ayudar a subir esto a github?.
+https://github.com/new
+C:\Users\Coder\Proyectos\Pildora_Evaluación de modelos y métricas de rendimiento
+Coder@F5-LAPMAD-124 MINGW64 ~/Proyectos
+$ ls -la 'Pildora_Evaluación de modelos y métricas de rendimiento'/
+total 14748
+drwxr-xr-x 1 Coder 197121       0 Feb  7 20:58  ./
+drwxr-xr-x 1 Coder 197121       0 Feb  6 22:37  ../
+drwxr-xr-x 1 Coder 197121       0 Feb  6 22:58  .obsidian/
+-rw-r--r-- 1 Coder 197121  190034 Feb  7 20:45 'BorradorIA_School_F5_P6_Evaluación de modelos y métricas de rendimiento.docx'
+-rw-r--r-- 1 Coder 197121 4843648 Feb  7 20:45 'BorradorIA_School_F5_P6_Evaluación de modelos y métricas de rendimiento.pdf'
+-rw-r--r-- 1 Coder 197121  625253 Feb  7 20:43 'Evaluación de modelos y métricas de rendimiento.ipynb - Colab.pdf'
+-rw-r--r-- 1 Coder 197121  196195 Feb  7 20:38  Evaluación_de_modelos_y_métricas_de_rendimiento.ipynb
+-rw-r--r-- 1 Coder 197121 3274169 Feb  7 20:46  README.20260207204652S.pdf
+-rw-r--r-- 1 Coder 197121 1939631 Feb  7 20:53 'README.20260207204652S_&#1.pdf'
+-rw-r--r-- 1 Coder 197121 1961155 Feb  7 20:56 'README.20260207204652S_&#2.pdf'
+-rw-r--r-- 1 Coder 197121 1988592 Feb  7 20:58 'README.20260207204652S_&#3.pdf'
+-rw-r--r-- 1 Coder 197121   41823 Feb  7 20:37  README.md
+-rw-r--r-- 1 Coder 197121       0 Feb  6 23:13  Temp.md
+-rw-r--r-- 1 Coder 197121     548 Feb  7 21:55  Temp.txt
+Gracias Gemini.
+
+Hola Gemini.
+¿Puedes darme los pasos y sugerir un nombre para renombrar el directorio local?.
+Ejemplo:
+mv 'Pildora_Evaluación de modelos y métricas de rendimiento' Pildora_Evaluación_Modelos_y_metricas_de_rendimiento_JJ
+Gracias Gemini.
+
+¡Es una idea excelente! 💡 Renombrar carpetas eliminando espacios y tildes es una de las mejores prácticas en programación. Te ahorrará muchos dolores de cabeza con Git, GitHub y la consola de comandos en el futuro.
+
+Aquí tienes mis sugerencias y los pasos exactos para hacerlo en tu terminal Git Bash.
+
+1. Sugerencia de Nombre 🏷️
+Para que sea totalmente compatible con cualquier sistema (Windows, Linux, Mac) y servidores web, te recomiendo usar snake_case (guiones bajos), minúsculas y sin tildes.
+
+Tu propuesta: Pildora_Evaluación_Modelos_y_metricas_de_rendimiento_JJ (Aún tiene tildes y mayúsculas, que a veces dan guerra).
+
+Mi recomendación: pildora_evaluacion_modelos_JJ
+
+Es corto.
+
+Describe el contenido.
+
+Tiene tus iniciales.
+
+0 caracteres especiales.
+
+2. Pasos para Renombrar 🛠️
+Asegúrate de estar en la carpeta ~/Proyectos (un nivel por encima de la carpeta que quieres cambiar).
+
+Ejecuta estos comandos en tu terminal Git Bash:
+
+Bash
+# 1. Asegurarnos de estar en la carpeta correcta
+cd ~/Proyectos
+
+# 2. El comando mv (move) sirve para renombrar
+# Nota: Uso comillas simples '' para el nombre viejo porque tiene espacios.
+mv 'Pildora_Evaluación de modelos y métricas de rendimiento' pildora_evaluacion_modelos_JJ
+
+# 3. Verificamos que se haya cambiado
+ls -la
+
+# 4. Entramos en la nueva carpeta
+cd pildora_evaluacion_modelos_JJ
+¿Por qué hacemos esto? 🤓
+Espacios: En la terminal, un espacio significa "separar comandos". Si tu carpeta tiene espacios, siempre tendrás que usar comillas o barras invertidas (\ ).
+
+Tildes (á, é, í...): A veces, al subir archivos a GitHub o compartirlos entre Windows y Mac, las tildes se "rompen" y aparecen símbolos raros (como EvaluaciÃ³n). Mejor evitarlas en nombres de archivos y carpetas.
+
+Una vez hayas hecho el renombrado y estés dentro con cd, ¡podemos proceder con el git init y la subida a GitHub! ¿Te animas? 🚀
