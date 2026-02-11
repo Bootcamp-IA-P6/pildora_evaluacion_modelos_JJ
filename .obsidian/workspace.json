@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Temp.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Temp"
+              "title": "README"
             }
           }
         ]
@@ -185,8 +185,8 @@
   },
   "active": "9acbb35070abcaa4",
   "lastOpenFiles": [
-    "README.md",
     "README.pdf",
+    "README.md",
     "Temp.md",
     "~WRL0690.tmp",
     "~WRD0619.tmp",

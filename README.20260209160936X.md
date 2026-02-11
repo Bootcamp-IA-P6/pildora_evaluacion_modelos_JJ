@@ -1,6 +1,4 @@
-¿Qué es la Evaluación de modelos y métricas de rendimiento.? 
-
-What is the evaluation of performance models and metrics?
+# ¿Qué es la Evaluación de modelos y métricas de rendimiento.? 
 
 ```html
 <https://colab.research.google.com/drive/1LE_iqYKa2di0MASjTbpC-1NwOXdFmOqZ#scrollTo=3WHQfwy8l2G5>
@@ -8,48 +6,36 @@ What is the evaluation of performance models and metrics?
 
 La **evaluación de modelos** es el proceso de cuantificar qué tan bien predice un algoritmo de Inteligencia Artificial sobre datos que no ha visto antes. Su objetivo es asegurar que el modelo sea capaz de generalizar y no simplemente de memorizar los datos de entrenamiento (un problema conocido como _overfitting_).
 
-**Model evaluation** is the process of quantifying how well an AI algorithm predicts based on data it has never seen before. Its goal is to ensure that the model is capable of generalizing and not simply memorizing the training data (a problem known as overfitting).
-
 Las **métricas de rendimiento** son las reglas de medida 📏 específicas que usamos para ponerle una "nota" numérica a esa evaluación. Dependiendo del tipo de problema, usaremos diferentes métricas para entender los errores del modelo.
-
-Performance metrics are the specific measurement rules we use to assign a numerical "grade" to that evaluation. Depending on the type of problem, we'll use different metrics to understand the model's errors.
 
 Puede enfocarse desde un punto de vista de:
 
-It can be approached from the perspective of:
-
-1.     **Métricas para Clasificación**: El modelo predice categorías (ej. ¿es fraude o no?). Se explora la matriz de confusión, precisión y exhaustividad.
+## 1.	**Métricas para Clasificación**: El modelo predice categorías (ej. ¿es fraude o no?). Se explora la matriz de confusión, precisión y exhaustividad.
 Se centra en problemas donde el modelo asigna categorías. Aquí exploraremos por qué la exactitud (**Accuracy**) puede ser engañosa si los datos no están equilibrados. Aparecen herramientas como **Matriz de Confusión**, el **F1-Score** o la **Curva ROC**.
 
-**Classification Metrics**: The model predicts categories (e.g., is it fraud or not?). The confusion matrix, accuracy, and completeness are explored.
-This focuses on problems where the model assigns categories. Here, we will explore why accuracy can be misleading if the data is not balanced. Tools such as the Confusion Matrix, the F-score, and the ROC curve are introduced.
-
-2.     **Métricas para Regresión**: El modelo predice valores numéricos continuos (ej. el precio de una casa).
+## 2.	**Métricas para Regresión**: El modelo predice valores numéricos continuos (ej. el precio de una casa).
 Aparecen conceptos como el **Error Absoluto Medio (MAE)**, el **Error Cuadrático Medio (MSE)** y el **Coeficiente de Determinación ($R^2$)** para entender cuánto se alejan nuestras predicciones de la realidad.
 
-**Metrics for Regression**: The model predicts continuous numerical values ​​(e.g., the price of a house).
-Concepts such as the **Mean Absolute Error (MAE)**, the **Mean Squared Error (MSE)**, and the **Coefficient of Determination ($R^2$)** are used to understand how far our predictions deviate from reality.
-
-3.    **Estrategias de Validación**: Cómo dividir los datos correctamente usando Python 3 para que la evaluación sea justa (Train/Test Split y Validación Cruzada).
+## 3.	**Estrategias de Validación**: Cómo dividir los datos correctamente usando Python 3 para que la evaluación sea justa (Train/Test Split y Validación Cruzada).
 Antes de medir, hay que saber cómo organizar los datos. Veremos la diferencia entre un simple **Train/Test Split** y técnicas más robustas como la **Validación Cruzada (K-Fold Cross Validation)**.
-
-**Validation Strategies**: How to properly split data using Python 3 for fair evaluation (Train/Test Split and Cross Validation).
-Before taking measurements, you need to know how to organize the data. We'll see the difference between a simple **Train/Test Split** and more robust techniques like **K-Fold Cross Validation**.
-
 La **evaluación en clasificación** no se trata solo de ver si el modelo "acierta", sino de entender _cómo_ y _dónde_ se equivoca. 🎯
 
-**Classification evaluation** is not just about seeing if the model "gets it right," but about understanding _how_ and _where_ it goes wrong. 🎯
-# Métricas para Clasificación
-### 1. Conceptos Base
+<div style="page-break-after: always;"></div>
 
-- **Predicción de categorías:** Es el proceso donde el modelo asigna una etiqueta discreta a una entrada (ej. "Spam" o "No Spam"). A diferencia de la regresión, aquí no buscamos un número, sino una clase. 🏷️
+## 1.	Métricas para Clasificación
+### 1.1.	Conceptos Base
 
-- **Exactitud (Accuracy):** Es el porcentaje total de predicciones correctas. Se calcula como:    $$\text{Accuracy} = \frac{\text{Aciertos Totales}}{\text{Total de Casos}}$$
-- **Datos equilibrados (balanceados):** Ocurre cuando las clases que queremos predecir tienen un número similar de ejemplos. Si tienes 500 fotos de gatos 🐈 y 500 de perros 🐕, tus datos están balanceados. Si tienes 990 de gatos y 10 de perros, están **desbalanceados**, y el Accuracy dejará de ser una métrica fiable.
+#### - 1.1.1.	**Predicción de categorías:** Es el proceso donde el modelo asigna una etiqueta discreta a una entrada (ej. "Spam" o "No Spam"). A diferencia de la regresión, aquí no buscamos un número, sino una clase. 🏷️
 
-### 2. Herramientas de Medición
+#### - 1.1.2.	**Exactitud (Accuracy):** Es el porcentaje total de predicciones correctas. Se calcula como:    $$\text{Accuracy} = \frac{\text{Aciertos Totales}}{\text{Total de Casos}}$$
 
-- **Matriz de Confusión:** Es una tabla que muestra los aciertos y errores desglosados en cuatro categorías: **Verdaderos Positivos (TP)**, **Verdaderos Negativos (TN)**, **Falsos Positivos (FP)** y **Falsos Negativos (FN)**. Es el "mapa" de los errores del modelo. 
+#### - 1.1.3.	**Datos equilibrados (balanceados):** Ocurre cuando las clases que queremos predecir tienen un número similar de ejemplos. Si tienes 500 fotos de gatos 🐈 y 500 de perros 🐕, tus datos están balanceados. Si tienes 990 de gatos y 10 de perros, están **desbalanceados**, y el Accuracy dejará de ser una métrica fiable.
+
+<div style="page-break-after: always;"></div>
+
+### 1.2. Herramientas de Medición
+
+#### - 1.2.1.	**Matriz de Confusión:** Es una tabla que muestra los aciertos y errores desglosados en cuatro categorías: **Verdaderos Positivos (TP)**, **Verdaderos Negativos (TN)**, **Falsos Positivos (FP)** y **Falsos Negativos (FN)**. Es el "mapa" de los errores del modelo. 
 
 Para entender estos conceptos, imaginemos un **test médico** 🏥 para detectar una enfermedad. En este escenario, ser "Positivo" significa tener la enfermedad y ser "Negativo" significa estar sano.
 
@@ -62,36 +48,36 @@ Para entender estos conceptos, imaginemos un **test médico** 🏥 para detectar
 
 Estos cuatro valores son los "ladrillos" con los que construimos todas las métricas de clasificación. Dependiendo del problema, nos preocupará más un tipo de error que otro.
 
-- **Precisión (Precision):** ¿Qué tan fiable es el modelo cuando dice que algo es positivo? Responde a: _"De todos los que predije como positivos, ¿cuántos lo eran realmente?"_ 💎
+#### - 1.2.2.	**Precisión (Precision):** ¿Qué tan fiable es el modelo cuando dice que algo es positivo? Responde a: _"De todos los que predije como positivos, ¿cuántos lo eran realmente?"_ 💎
  
-- **Exhaustividad (Recall/Sensitivity):** ¿Qué capacidad tiene el modelo para encontrar todos los casos positivos? Responde a: _"De todos los casos que eran realmente positivos, ¿cuántos logré detectar?"_ 🔍
+#### - 1.2.3.	**Exhaustividad (Recall/Sensitivity):** ¿Qué capacidad tiene el modelo para encontrar todos los casos positivos? Responde a: _"De todos los casos que eran realmente positivos, ¿cuántos logré detectar?"_ 🔍
 
-- **F1-Score:** Es la media armónica entre la Precisión y la Exhaustividad. Es muy útil cuando quieres un equilibrio entre ambas y tienes clases desbalanceadas. ⚖️
+#### - 1.2.4.	**F1-Score:** Es la media armónica entre la Precisión y la Exhaustividad. Es muy útil cuando quieres un equilibrio entre ambas y tienes clases desbalanceadas. ⚖️
 
-La **media armónica** es una métrica. Está diseñada para proporcionar un único valor que equilibre  un conjunto de datos desbalanceado.
-### Fórmula Matemática 🧮
+##### - 1.2.4.1.	La **media armónica** es una métrica. Está diseñada para proporcionar un único valor que equilibre  un conjunto de datos desbalanceado.
+##### - 1.2.4.2.	Fórmula Matemática 🧮
 
 A diferencia del promedio normal (media aritmética), la media armónica se calcula de la siguiente manera:
 
 $$F1 = 2 \cdot \frac{\text{Precisión} \cdot \text{Exhaustividad}}{\text{Precisión} + \text{Exhaustividad}}$$
 
-### ¿Por qué usamos la media armónica y no la normal? 🤔
+##### - 1.2.4.3.	¿Por qué usamos la media armónica y no la normal? 🤔
 
-La media armónica **penaliza los valores extremos**.
+###### - 1.2.4.3.1.	La media armónica **penaliza los valores extremos**.
 
-- Si la precisión es $1.0$ (perfecta) pero la exhaustividad es $0.0$ (pésima), la **media aritmética** te daría un $0.5$, lo cual parece aceptable.
+###### - 1.2.4.3.2.	Si la precisión es $1.0$ (perfecta) pero la exhaustividad es $0.0$ (pésima), la **media aritmética** te daría un $0.5$, lo cual parece aceptable.
 
-- Sin embargo, la **media armónica (F1-Score)** te daría un $0$, reflejando que el modelo realmente no es útil porque falla completamente en una de las dos áreas.
+###### - 1.2.4.3.3.	Sin embargo, la **media armónica (F1-Score)** te daría un $0$, reflejando que el modelo realmente no es útil porque falla completamente en una de las dos áreas.
 
 Para calcular estas métricas, utilizamos estas fórmulas:
 
-#### Precisión (Precision) 🎯
+##### - 1.2.4.3.	Precisión (Precision) 🎯
 
 La precisión mide qué tan "limpias" son nuestras predicciones positivas. Es la proporción de aciertos positivos sobre **todo lo que el modelo marcó como positivo** (aciertos y errores).
 
 $$Precisión = \frac{TP}{TP + FP}$$
 
-#### Exhaustividad (Recall) 🔍
+##### - 1.2.4.4.	Exhaustividad (Recall) 🔍
 
 La exhaustividad (también llamada sensibilidad) mide la capacidad del modelo para encontrar **todos** los casos positivos reales. Es la proporción de aciertos positivos sobre **el total de casos que realmente eran positivos**.
 
@@ -99,7 +85,7 @@ $$Exhaustividad = \frac{TP}{TP + FN}$$
 
 ---
 
-### Código de ejemplo en Python
+### 1.3.1.	Código de ejemplo en Python
 
 Ejemplo de **clasificación binaria** (por ejemplo, detectar si un mensaje es "Spam" o "No Spam").
 
@@ -131,14 +117,14 @@ print(f"Exhaustividad (Recall): {recall_score(y_true, y_pred):.2f}")
 print(f"F1-Score: {f1_score(y_true, y_pred):.2f}")
 ```
 
-### ¿Qué está pasando en el código? 🧐
+### 1.3.2.	¿Qué está pasando en el código? 🧐
 
 1. **`y_true` vs `y_pred`**: Comparamos la realidad con la predicción. Fíjate que en la lista hay 10 elementos.
 2. **`ravel()`**: Es un pequeño truco de Python para extraer los cuatro valores de la matriz (`tn, fp, fn, tp`) directamente de la tabla que genera `scikit-learn`.
 3. **Métricas**: Usamos las funciones integradas que aplican las fórmulas matemáticas que mencionaste antes ($F1$, $Precisión$, etc.).
 
 ---
-##### Matriz de Confusión 🧩
+### 1.3.3.	Matriz de Confusión 🧩
 
 Comparando elemento a elemento `y_true` y `y_pred`:
 
@@ -156,7 +142,7 @@ Comparando elemento a elemento `y_true` y `y_pred`:
 
 ---
 
-### 2. Modelo "Perezoso" y Confianza 💤
+### 1.3.4.	Modelo "Perezoso" y Confianza 💤
 
 Un **modelo perezoso** (o _baseline_) es aquel que no aprende patrones, sino que simplemente predice siempre la clase mayoritaria.
 
@@ -167,7 +153,7 @@ Si en tus datos el 60% es "Spam" y el modelo dice siempre "Spam":
 
 ---
 
-### 3. Informe Automático en Python 🐍
+### 1.3.5.	Informe Automático en Python 🐍
 
 En `scikit-learn`, se pueden obtener todas las métricas (Precisión, Recall, F1-Score y Accuracy) desglosadas por clase con una sola función:
 
@@ -177,40 +163,40 @@ from sklearn.metrics import classification_report
 print(classification_report(y_true, y_pred))
 ```
 
-##### **Curva ROC** (Receiver Operating Characteristic)
+### 1.3.6.	**Curva ROC** (Receiver Operating Characteristic)
 Herramienta visual para evaluar qué tan bien un modelo de clasificación puede distinguir entre dos clases (como "Sano" vs. "Enfermo") a medida que cambiamos el **umbral de decisión**. 📈
 
 En lugar de mirar un solo número, la curva ROC nos muestra el panorama completo al graficar dos métricas enfrentadas estableciendo relaciones (**Tasas**):
 
-1. **Tasa de Verdaderos Positivos (TPR / Sensibilidad):** De todos los positivos reales, ¿cuántos detectamos correctamente?
+#### 1.3.6.1.	**Tasa de Verdaderos Positivos (TPR / Sensibilidad):** De todos los positivos reales, ¿cuántos detectamos correctamente?
 
 $$TPR = \frac{TP}{TP + FN}$$
 
-2. **Tasa de Falsos Positivos (FPR):** De todos los negativos reales, ¿cuántos marcamos incorrectamente como positivos?
+#### 1.3.6.2.	**Tasa de Falsos Positivos (FPR):** De todos los negativos reales, ¿cuántos marcamos incorrectamente como positivos?
 $$FPR = \frac{FP}{FP + TN}$$
 
 ---
 
-### Ejemplo práctico: Radar de Aviones ✈️
+#### 1.3.6.3.	Ejemplo práctico: Radar de Aviones ✈️
 
 Diseñas un radar para detectar aviones enemigos. El radar recibe señales y debes decidir qué tan fuerte debe ser la señal para activar la alarma (**umbral**):
 
-- **Umbral muy bajo:** El radar es súper sensible. Detectarás todos los aviones (TPR = 1.0), pero también te darán "falsas alarmas" por bandadas de pájaros o nubes (FPR muy alto). Estarías en la esquina superior derecha de la curva. 🐦
+##### 1.3.6.3.1.	**Umbral muy bajo:** El radar es súper sensible. Detectarás todos los aviones (TPR = 1.0), pero también te darán "falsas alarmas" por bandadas de pájaros o nubes (FPR muy alto). Estarías en la esquina superior derecha de la curva. 🐦
 
-- **Umbral muy alto:** El radar es muy estricto. Solo suena si la señal es gigante. No tendrás falsas alarmas (FPR = 0.0), pero se te escaparán aviones reales (TPR bajo). Estarías en la esquina inferior izquierda. 🛡️
+##### 1.3.6.3.2.	**Umbral muy alto:** El radar es muy estricto. Solo suena si la señal es gigante. No tendrás falsas alarmas (FPR = 0.0), pero se te escaparán aviones reales (TPR bajo). Estarías en la esquina inferior izquierda. 🛡️
 
-- **El Modelo Ideal:** Sería aquel que detecta todos los aviones (TPR = 1.0) sin dar ninguna falsa alarma (FPR = 0.0). En la gráfica, esto es la esquina superior izquierda.
+##### 1.3.6.3.3.	**El Modelo Ideal:** Sería aquel que detecta todos los aviones (TPR = 1.0) sin dar ninguna falsa alarma (FPR = 0.0). En la gráfica, esto es la esquina superior izquierda.
 
-El **AUC (Área Bajo la Curva)** es el número que resume esta gráfica. Un AUC de **1.0** es un modelo perfecto, mientras que un **0.5** es como lanzar una moneda al aire (puro azar). 🎲
-### 1. ¿Por qué el AUC es mejor que el Accuracy? 📉
+##### 1.3.6.3.4.	El **AUC (Área Bajo la Curva)** es el número que resume esta gráfica. Un AUC de **1.0** es un modelo perfecto, mientras que un **0.5** es como lanzar una moneda al aire (puro azar). 🎲
+###### 1.3.6.3.4.1.	¿Por qué el AUC es mejor que el Accuracy? 📉
 
-El **Accuracy** es como un profesor que solo cuenta cuántas respuestas están bien, sin mirar si las preguntas eran fáciles o difíciles. Si en un examen de 100 preguntas, 99 son de "sumar 1+1" y solo 1 es de "cálculo avanzado", alguien que no sepa nada de cálculo pero sí de sumas sacará un 99% de nota. ¿Es un experto? No, solo aprovechó el **desbalance de los datos**.
+###### 1.3.6.3.4.1.1.	El **Accuracy** es como un profesor que solo cuenta cuántas respuestas están bien, sin mirar si las preguntas eran fáciles o difíciles. Si en un examen de 100 preguntas, 99 son de "sumar 1+1" y solo 1 es de "cálculo avanzado", alguien que no sepa nada de cálculo pero sí de sumas sacará un 99% de nota. ¿Es un experto? No, solo aprovechó el **desbalance de los datos**.
 
-El **AUC (Area Under the Curve)**, en cambio, mide la capacidad del modelo para **ordenar** las probabilidades. Evalúa si el modelo es capaz de poner a los "positivos" por encima de los "negativos" en una lista de probabilidades, sin importar dónde pongamos el punto de corte (umbral).
+###### 1.3.6.3.4.1.2.	El **AUC (Area Under the Curve)**, en cambio, mide la capacidad del modelo para **ordenar** las probabilidades. Evalúa si el modelo es capaz de poner a los "positivos" por encima de los "negativos" en una lista de probabilidades, sin importar dónde pongamos el punto de corte (umbral).
 
-- **Accuracy:** Se ve afectado por la proporción de clases.
-- **AUC:** Es robusto frente al desbalance porque mira el rendimiento en todos los umbrales posibles.
-### 2. Umbral de Decisión y la Curva ROC 🎚️
+###### 1.3.6.3.4.1.3.	**Accuracy:** Se ve afectado por la proporción de clases.
+###### 1.3.6.3.4.3.2.	**AUC:** Es robusto frente al desbalance porque mira el rendimiento en todos los umbrales posibles.
+###### 1.3.6.3.4.2.	Umbral de Decisión y la Curva ROC 🎚️
 
 Por defecto, un modelo suele decir que algo es "Positivo" si su probabilidad es mayor a **0.5**. Pero ese número no es sagrado.
 

@@ -80,3 +80,15 @@ Espacios: En la terminal, un espacio significa "separar comandos". Si tu carpeta
 Tildes (á, é, í...): A veces, al subir archivos a GitHub o compartirlos entre Windows y Mac, las tildes se "rompen" y aparecen símbolos raros (como EvaluaciÃ³n). Mejor evitarlas en nombres de archivos y carpetas.
 
 Una vez hayas hecho el renombrado y estés dentro con cd, ¡podemos proceder con el git init y la subida a GitHub! ¿Te animas? 🚀
+
+  532  mv 'Pildora_Evaluación de modelos y métricas de rendimiento' pildora_evaluacion_modelos_JJ
+  533  ls -la
+  534  cd pildora_evaluacion_modelos_JJ/
+  535  git init
+  536  git add .
+  537  git commit -m "Subida inicial: Píldora de Evaluación de Modelos y Métricas"
+  538  git branch -M main
+  539  git remote add origin https://github.com/Bootcamp-IA-P6/pildora_evaluacion_modelos_JJ.git
+  540  git push -u origin main
+
+20260208072215*
