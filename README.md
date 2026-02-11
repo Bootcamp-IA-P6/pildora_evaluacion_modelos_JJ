@@ -3,7 +3,7 @@
 What is the evaluation of performance models and metrics?
 
 ```html
-<https://colab.research.google.com/drive/1LE_iqYKa2di0MASjTbpC-1NwOXdFmOqZ#scrollTo=3WHQfwy8l2G5>
+https://colab.research.google.com/drive/1LE_iqYKa2di0MASjTbpC-1NwOXdFmOqZ?usp=sharing
 ```
 
 La **evaluación de modelos** es el proceso de cuantificar qué tan bien predice un algoritmo de Inteligencia Artificial sobre datos que no ha visto antes. Su objetivo es asegurar que el modelo sea capaz de generalizar y no simplemente de memorizar los datos de entrenamiento (un problema conocido como _overfitting_).
